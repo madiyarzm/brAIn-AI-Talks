@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.ai_red{
+    color: red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: black; /* Changed navbar background color to light blue */
+    color: white;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5em 1.5em; /* Larger navbar */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+    z-index: 1000;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 2em; /* Brand positioned absolutely to the left */
+    font-size: 1.5em;
+    border: 2px solid white; /* Added white border around text */
+    padding: 5px; /* Added padding around text */
+}
+
+.navbar-menu {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto; /* Auto margins to center the menu */
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.navbar-menu li {
+    padding: 0 1.5em;
+    font-size: 1.2em;
+    font-weight: bold; /* Make text bold */
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    font-weight: bold; /* Make text bold */
+}
+
+.navbar-menu a:hover {
+    color: #ddd;
+}
+
+.main-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+#silkroad{
+    position: absolute;
+    top: 93%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 200px;
+    margin-top: -29px;
+    margin-left: -25px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+#minerva{
+    position: absolute;
+    top: 93%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 130px;
+    margin-top: -29px;
+    margin-left: -25px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+#sparkplug{
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    margin-top: -29px;
+    margin-left: -25px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+#logo {
+    position: absolute;
+    top: 51%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    width: 727px;
+    height: 271px;
+    margin-top: -29px;
+    margin-left: -25px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+#AI {
+    padding-top: 20px;
+    margin-left: 14%;
+    margin-right: auto;
+    width: 1050px;
+    height: 600px;
+    border-radius: 50px;
+}
+
+.additional-content {
+    width: 100%; /* Full width */
+    height: 1200px; /* Height of the container, adjust as needed */
+    background-color: white;
+}
+
+#additionalContent {
+    opacity: 0; /* Start with the text invisible */
+    transition: transform 1s ease-out; /* Smooth transition for the effect */
+    transform: translateY(20px); /* Start a bit lower */
+}
+
+#additionalContent.show {
+    opacity: 1; /* Make text fully visible when class 'show' is added */
+    transform: translateY(0); /* Move text to its final position */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    padding-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 70px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.brain {
+    padding-top: 20px;
+}
+
+.brain-description {
+    font-weight: 900;
+    font-size: 27px;
+    color: white; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.brain-row {
+    display: flex; /* Use flexbox to lay out children in a row */
+    justify-content: center; /* Center children horizontally */
+    align-items: flex-start; /* Align children to the start of the cross axis */
+    padding: 20px 0;
+}
+
+.cities{
+    color: blue;
+}
+
+.brain-container {
+    margin-top: 40%;
+    padding-top: 37%;
+    flex: 3; /* Distribute space evenly */
+    margin: 0 10px; /* Spacing between containers */
+    text-align: center; /* Center text within each container */
+}
+
+.brain-text{
+    font-weight: 500;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .brain-row {
+        flex-direction: column; /* Stack the items vertically on small screens */
+        margin-top: 100px;
+    }
+    .brain-container {
+        margin: 10px 0; /* Adjust margin for stacked layout */
+    }
+}
+
+.brain-description, .brain-text {
+    opacity: 0; /* Start with the text invisible */
+    transform: translateY(20px); /* Start a bit lower */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition for the effect */
+}
+
+.show {
+    opacity: 1; /* Make text fully visible when class 'show' is added */
+    transform: translateY(0); /* Move text to its final position */
+}
+
+.countdown-container {
+    height: 300px;
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-image: url(black_grad.jpeg);
+  }
+
+  .g{
+    padding-top: 50px;
+  }
+
+
+  .countdown-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding-top: 30px;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdown div {
+    margin: 0 10px;
+  }
+
+  .countdown-number {
+    background: #921502;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 2em;
+    border-width: 1%;
+    animation: pop 1s infinite;
+  }
+
+  .countdown-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+  }
+
+  .video_description{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    padding-top: 25px;
+    height: 60px;
+  }
+
+  /* video {
+    display:block;
+    width:300px;
+    margin:0 auto;
+  } */
+  
+
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .form{
+    border: 3px solid;
+    position:absolute;
+    top: 70%;
+    left: 45%;
+    transform: translate(-40%, -50%);
+    padding: 10px;
+    width: 45%;
+    background-color: white;
+  }
+
+
+  .earth_container{
+    background:black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+    animation: stars 205s linear alternate;
+    height: 1000px;
+  }
+
+  .earth{
+    background:url(https://i.imgur.com/bYSnuNE.jpg?1);
+    background-size:cover;
+    border:2px solid #000;
+    border-radius:50%;
+    width:400px;
+    height:400px;
+    animation: movimiento 5s linear 0s infinite;
+    box-shadow:0 0 25px RGBA(255,255,255, 0.10),
+               -8px -8px 15px #000 inset,
+               2px 2px 25px #000 inset,
+               -45px -45px 25px RGBA(0,0,0, 0.5) inset, 
+               25px 25px 45px RGBA(0,0,0, 0.45) inset;
+    
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 45%);
+  }
+
+  .iframee{
+    margin-top: 4.5%;
+    align-self: center;
+  }
+
+  .body_of_rsvp{
+    height: 500px;
+  }
+
+  /* Set the size of the div element that contains the map */
+    #map {
+        height: 400px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+    }
+  
+  @keyframes movimiento {
+    0% { background-position:0 0 }
+    100% { background-position:355px 0 }
+  }
+  
+  @keyframes stars {
+    0% { background-position:0 0 }
+    100% { background-position:0 100% }
+
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* This ensures that no horizontal scrollbar appears */
+}

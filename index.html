@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brAIn | AI in Action</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="google_maps" href="google_maps.ts">
+</head>
+<script type="text/javascript">
+    <!--
+    if (screen.width <= 699) {
+    document.location = "mobile.html";
+    }
+    //-->
+    </script>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <b>br<span class="ai_red">AI</span>n</b>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rsvp.html">Register! - RSVP</a></li>
+            <!-- Removed disabled item -->
+            <!-- Removed dropdown item to center Home and Link only -->
+        </ul>
+    </nav>
+
+    <div class="main-content" style="position: relative;">
+        <video width="100%" autoplay loop muted>
+            <source src="footage_blur.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img id="logo" src="transparent_black_brAIn_logo.png" alt="Description of your image">
+
+        <img id="silkroad" src="silkroad.png" alt="Description of your image">
+        <img id="minerva" src="minerva_another.png" alt="Description of your image">
+        <img id="sparkplug" src="transparent_sparkplug_logo.png" alt="Description of your image">
+
+        <!-- Main content goes here -->
+    </div>
+
+   
+
+    <div class="earth_container">
+        <div class="earth"></div>
+        <h1 id="additionalContent" class="fade-in">What is br<span class="ai_red">AI</span>n?</h1>
+
+        <div class="brain-row">
+            <div class="brain-container">
+                <div class="brain-text"> <b>br<span class="ai_red">AI</span>n</b> is your gateway to understanding <span class="ai_red">AI</span></div>
+                <br>
+                <div class="brain-text">We bring together a global community from regions like <b><span class="cities">Bay Area, Taipei, Seoul, London, Berlin</span></b>, and <b><span class="cities">Hyderabad</span></b></div>
+                <br>
+                <div class="brain-text">fostering collaboration for everyone interested in <span class="ai_red">AI</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="countdown-container">
+        <div class="countdown-title">Countdown to closest Event</div>
+        <div class="countdown">
+            <div class="g" >
+                <div class="countdown-number" id="days"></div>
+                <br>
+                <div class="countdown-text">Days</div>
+            </div>
+            <div class="g" >
+                <div class="countdown-number" id="hours"></div>
+                <br>
+                <div class="countdown-text">Hours</div>
+            </div>
+            <div class="g" > 
+                <div class="countdown-number" id="minutes"></div>
+                <br>
+                <div class="countdown-text">Minutes</div>
+            </div>
+            <div class="g" >
+                <div class="countdown-number" id="seconds"></div>
+                <br>
+                <div class="countdown-text">Seconds</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="videoplayer_div"> 
+        <div class="video_description" style="vertical-align: middle;">Learn more about the <b>br<span class="ai_red">AI</span>n</b> mission, in our short intro video. Subscribe to our <u><a href="https://www.youtube.com/channel/UCvFZXMalSLwxgryj1UrHgZA">YouTube channel</a></u> so you don't miss new episodes!</div>
+
+      <video id="myVid" controls autoplay width="100%" height="100%">
+        <source src="brAIn.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <script>
+
+        window.addEventListener('scroll', function() {
+            // Select all elements that need the animation
+            var elementsToShow = document.querySelectorAll('.fade-in, .brain-description, .brain-text');
+            
+            for (var i = 0; i < elementsToShow.length; i++) {
+                var element = elementsToShow[i];
+                var position = element.getBoundingClientRect();
+
+                if (position.top < window.innerHeight && position.bottom >= 0) {
+                    element.classList.add('show');
+                } else {
+                    element.classList.remove('show');
+                }
+            }
+        });
+
+        const countdown = () => {
+            const countDate = new Date('April 7, 2024 12:59:59').getTime();
+            const now = new Date().getTime();
+            const gap = countDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            const textHour = Math.floor((gap % day) / hour);
+            const textMinute = Math.floor((gap % hour) / minute);
+            const textSecond = Math.floor((gap % minute) / second);
+
+            document.getElementById('days').innerText = textDay;
+            document.getElementById('hours').innerText = textHour;
+            document.getElementById('minutes').innerText = textMinute;
+            document.getElementById('seconds').innerText = textSecond;
+
+            if (gap < 0) {
+                clearInterval(timer);
+                document.querySelector('.countdown-title').innerText = "The Event has Started!";
+                document.querySelectorAll('.countdown-number').forEach(el => el.innerText = "0");
+            }
+
+            window.addEventListener('load', videoScroll);
+            window.addEventListener('scroll', videoScroll);
+
+            function videoScroll() {
+
+                if ( document.querySelectorAll('video[autoplay]').length > 0) {
+                    var windowHeight = window.innerHeight,
+                    videoEl = document.querySelectorAll('video[autoplay]');
+
+                    for (var i = 0; i < videoEl.length; i++) {
+                        var thisVideoEl = videoEl[i],
+                        videoHeight = thisVideoEl.clientHeight,
+                        videoClientRect = thisVideoEl.getBoundingClientRect().top;
+
+                        if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
+                            thisVideoEl.play();
+                        } else {
+                            thisVideoEl.pause();
+                        }
+
+                    }
+                }
+
+            }
+
+        };
+
+        let timer = setInterval(countdown, 1000);  
+    </script>
+</body>
+</html>
+
+
