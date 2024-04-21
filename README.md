@@ -15,6 +15,10 @@ Buenos-Aires, Argentina
 
 ## About brAIn
 
+
+https://github.com/madiyarzm/brAIn-AI-Talks/assets/148677506/34e38080-9b82-4a93-a29e-69a90046180d
+
+
 At brAIn, our mission is clear: to demystify AI and make it accessible to everyone. Our platform is uniquely designed for AI enthusiasts across various fields—entrepreneurs, startup executives, programmers, and problem solvers. We are committed to empowering our community with our core "Triple-C AI" values:
 
 - **Creativity:** Encouraging innovative approaches to AI.
@@ -30,6 +34,7 @@ brAIn offers a range of features designed to engage users and foster a deep unde
 - **In-person Events:** Regular meetups, workshops, and seminars to facilitate networking and hands-on learning.
 - **Online Resources:** Access to articles, tutorials, and case studies to continue learning outside of events.
 - **Community Support:** A vibrant community forum for discussing ideas, sharing projects, and seeking advice.
+
 
 ## Getting Started
 
